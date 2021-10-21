@@ -62,15 +62,6 @@ async def is_admin(event, user):
 kittu = "this bot is made by kittu"
 
 
-@bot.on(events.NewMessage(pattern="^/start (.+)"))
-async def start(event):
-    event.reply(f'''This is A spam Bot, Owned by @{OWNER_USERNAME} and created by @Autichrist \n\nGive Command \n/help to know All commands of this bot''')
-
-
-@bot.on(events.NewMessage(pattern="^/help (.+)"))
-async def start(event):
-    event.reply(f'''Available Commands of bot: \n\n /spam \n /cspam \n /wspam \n /picspam \n /depayspam \n\n\n if you like this bot then please follow this github account -  [FOLLOW ME](https://github.com/noob-kittu)''')
-
 
 
 
