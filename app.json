@@ -24,6 +24,10 @@
             "description": "Bot token, get it from @BotFather.",
             "value": ""
         },
+        "EVENT_LOGS": {
+            "description": "Channel or Group ID.",
+            "value": ""
+        },
         "OWNER": {
             "description": "Your Telegram ID Number",
             "value": ""

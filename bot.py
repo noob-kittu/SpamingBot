@@ -36,6 +36,7 @@ logging.basicConfig(format='[%(levelname) 5s/%(asctime)s] %(name)s: %(message)s'
 APP_ID = os.environ.get("APP_ID", default=None)
 API_HASH = os.environ.get("API_HASH", default=None)
 BOT_TOKEN = os.environ.get("BOT_TOKEN", default=None)
+EVENT_LOGS = os.environ.get("EVENT_LOGS", default=None)
 OWNER_USERNAME = os.environ.get("OWNER_USERNAME", default="Autichrist")
 OWNER = os.environ.get("OWNER", default="Autichrist")
 
@@ -44,7 +45,6 @@ bot = TelegramClient("SpamBot", APP_ID, API_HASH)
 start = bot.start(bot_token=BOT_TOKEN) 
 
 
-EVENT_LOGS = 0
 
 
 async def is_admin(event, user):
