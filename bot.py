@@ -43,6 +43,8 @@ OWNER = os.environ.get("OWNER", default="Autichrist")
 
 bot = TelegramClient("SpamingBot", APP_ID, API_HASH)
 start = bot.start(bot_token=BOT_TOKEN) 
+print ("Successfully Started")
+start.run_until_disconnected()
 
 
 
@@ -199,4 +201,3 @@ async def spammer(e):
 
 
 
-print ("Successfully Started")
