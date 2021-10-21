@@ -51,19 +51,19 @@ start = bot.start(bot_token=BOT_TOKEN)
 
 def is_admin(func):
     @functools.wraps(func)
-    async def a_c(event):
+    async def a_c(e):
         is_admin = False
-        if not event.is_private:
+        if not e.is_private:
             try:
-                _s = await event.client.get_permissions(event.chat_id, event.sender_id)
+                _s = await e.client.get_permissions(e.chat_id, e.sender_id)
                 if _s.is_admin:
                     is_admin = True
             except:
                 is_admin = False
         if is_admin:
-            await func(event, _s)
+            await func(_s)
         else:
-            await event.reply("Only Admins can execute this command!")
+            await e.reply("Only Admins can execute this command!")
     return a_c
 
 
@@ -171,7 +171,6 @@ async def spammer(e):
       await e.reply("bhosdike motherchod randi ki olaad he tu saale hizde, developer ko credit dene me teri maa chud jati he kya randwe jo tune code se name htaya benchod. abhi uske github pr jaa or follow kr gandu. made by kittu")
 
 
-    
     else:
         spamDelay = float(e.pattern_match.group(1).split(" ", 2)[0])
         counter = int(e.pattern_match.group(1).split(" ", 2)[1])
