@@ -200,4 +200,3 @@ async def spammer(e):
 
 
 print ("Successfully Started")
-start.run_until_disconnected()
