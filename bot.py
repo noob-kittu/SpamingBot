@@ -21,6 +21,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.'''
 
 import requests
+from telethon import *
 from telethon import TelegramClient
 from telethon import events
 import os
@@ -28,6 +29,9 @@ import logging
 import asyncio
 from asyncio import sleep
 import functools
+from telethon.tl import types
+from telethon.tl import functions
+
 
 
 logging.basicConfig(format='[%(levelname) 5s/%(asctime)s] %(name)s: %(message)s',
@@ -49,23 +53,16 @@ start = bot.start(bot_token=BOT_TOKEN)
 
 
 
-def is_admin(func):
-    @functools.wraps(func)
-    async def a_c(e):
-        is_admin = False
-        if not e.is_private:
-            try:
-                _s = await e.client.get_permissions(e.chat_id, e.sender_id)
-                if _s.is_admin:
-                    is_admin = True
-            except:
-                is_admin = False
-        if is_admin:
-            await func(e, _s)
-        else:
-            await e.reply("Only Admins can execute this command!")
-    return a_c
-
+async def is_admin(chat, user):
+    if isinstance(chat, (types.InputPeerChannel, types.InputChannel)):
+        return isinstance(
+            (
+                await bot(functions.channels.GetParticipantRequest(chat, user))
+            ).participant,
+            (types.ChannelParticipantAdmin, types.ChannelParticipantCreator),
+        )
+    if isinstance(chat, types.InputPeerUser):
+        return True
 
 kittu = "this bot is made by kittu"
 
@@ -83,12 +80,14 @@ async def help(event):
 
 
 @bot.on(events.NewMessage(pattern="^/cspam (.+)"))
-@is_admin
 async def tmeme(e):
     if not "kittu" in kittu:
      await e.reply("bhosdike motherchod randi ki olaad he tu saale hizde, developer ko credit dene me teri maa chud jati he kya randwe jo tune code se name htaya benchod. abhi uske github pr jaa or follow kr gandu. made by kittu")
 
 
+    if not await is_admin(e, e.sender_id) or OWNER:
+        await e.reply("You need to be an admin to do this.")
+        return
           
     else: 
          cspam = str(e.pattern_match.group(1))
@@ -103,12 +102,14 @@ async def tmeme(e):
 
 
 @bot.on(events.NewMessage(pattern="^/wspam (.+)"))
-@is_admin
 async def t_meme(e):
 
     if not "kittu" in kittu:
       await e.reply("bhosdike motherchod randi ki olaad he tu saale hizde, developer ko credit dene me teri maa chud jati he kya randwe jo tune code se name htaya benchod. abhi uske github pr jaa or follow kr gandu. made by kittu")
 
+    if not await is_admin(e, e.sender_id) or OWNER:
+        await e.reply("You need to be an admin to do this.")
+        return
     
     else:
         wspam = str(e.pattern_match.group(1))
@@ -123,13 +124,15 @@ async def t_meme(e):
 
 
 @bot.on(events.NewMessage(pattern="^/spam (\d+) (.+)"))
-@is_admin
 async def spammer(e):
 
     if not "kittu" in kittu:
       await e.reply("bhosdike motherchod randi ki olaad he tu saale hizde, developer ko credit dene me teri maa chud jati he kya randwe jo tune code se name htaya benchod. abhi uske github pr jaa or follow kr gandu. made by kittu")
 
 
+    if not await is_admin(e, e.sender_id) or OWNER:
+        await e.reply("You need to be an admin to do this.")
+        return
     
     else:
         counter = int(e.pattern_match.group(1))
@@ -143,13 +146,15 @@ async def spammer(e):
 
 
 @bot.on(events.NewMessage(pattern="^/picspam (\d+) (.+)"))
-@is_admin
 async def tiny_pic_spam(e):
 
     if not "kittu" in kittu:
       await e.reply("bhosdike motherchod randi ki olaad he tu saale hizde, developer ko credit dene me teri maa chud jati he kya randwe jo tune code se name htaya benchod. abhi uske github pr jaa or follow kr gandu. made by kittu")
 
 
+    if not await is_admin(e, e.sender_id) or OWNER:
+        await e.reply("You need to be an admin to do this.")
+        return
     
     else:
         counter = int(e.pattern_match.group(1))
@@ -164,13 +169,16 @@ async def tiny_pic_spam(e):
 
 
 @bot.on(events.NewMessage(pattern="/delayspam (.*)"))
-@is_admin
 async def spammer(e):
 
     if not "kittu" in kittu:
       await e.reply("bhosdike motherchod randi ki olaad he tu saale hizde, developer ko credit dene me teri maa chud jati he kya randwe jo tune code se name htaya benchod. abhi uske github pr jaa or follow kr gandu. made by kittu")
 
 
+    if not await is_admin(e, e.sender_id) or OWNER:
+        await e.reply("You need to be an admin to do this.")
+        return
+    
     else:
         spamDelay = float(e.pattern_match.group(1).split(" ", 2)[0])
         counter = int(e.pattern_match.group(1).split(" ", 2)[1])
