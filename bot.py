@@ -20,7 +20,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.'''
 
-
+import requests
 from telethon import TelegramClient
 from telethon import events
 import os
@@ -41,7 +41,7 @@ OWNER_USERNAME = os.environ.get("OWNER_USERNAME", default="Autichrist")
 OWNER = os.environ.get("OWNER", default="Autichrist")
 
 
-bot = TelegramClient("SpamBot", APP_ID, API_HASH)
+bot = TelegramClient("SpamingBot", APP_ID, API_HASH)
 start = bot.start(bot_token=BOT_TOKEN) 
 
 
