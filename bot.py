@@ -30,7 +30,7 @@ from asyncio import sleep
 
 
 logging.basicConfig(format='[%(levelname) 5s/%(asctime)s] %(name)s: %(message)s',
-                    level=logging.WARNING)
+                    level=logging.INFO)
 
 # Basics
 APP_ID = os.environ.get("APP_ID", default=None)
