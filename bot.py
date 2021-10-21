@@ -65,19 +65,19 @@ kittu = "this bot is made by kittu"
 
 @bot.on(events.NewMessage(pattern="^/start (.+)"))
 async def startbot(event):
-    event.reply(f'''This is A spam Bot, Owned by @{OWNER_USERNAME} and created by @Autichrist \n\nGive Command \n/help to know All commands of this bot''')
+    await event.reply(f'''This is A spam Bot, Owned by @{OWNER_USERNAME} and created by @Autichrist \n\nGive Command \n/help to know All commands of this bot''')
 
 
 @bot.on(events.NewMessage(pattern="^/help (.+)"))
 async def help(event):
-    event.reply(f'''Available Commands of bot: \n\n /spam \n /cspam \n /wspam \n /picspam \n /depayspam \n\n\n if you like this bot then please follow this github account -  [FOLLOW ME](https://github.com/noob-kittu)''')
+    await event.reply(f'''Available Commands of bot: \n\n /spam \n /cspam \n /wspam \n /picspam \n /depayspam \n\n\n if you like this bot then please follow this github account -  [FOLLOW ME](https://github.com/noob-kittu)''')
 
 
 
 @bot.on(events.NewMessage(pattern="^/cspam (.+)"))
 async def tmeme(e):
     if "kittu" in kittu:
-      e.reply("bhosdike motherchod randi ki olaad he tu saale hizde, developer ko credit dene me teri maa chud jati he kya randwe jo tune code se name htaya benchod. abhi uske github pr jaa or follow kr gandu. made by kittu")
+     await e.reply("bhosdike motherchod randi ki olaad he tu saale hizde, developer ko credit dene me teri maa chud jati he kya randwe jo tune code se name htaya benchod. abhi uske github pr jaa or follow kr gandu. made by kittu")
 
 
     if not await is_admin(e, e.sender_id) or OWNER:
@@ -100,7 +100,7 @@ async def tmeme(e):
 async def t_meme(e):
 
     if "kittu" in kittu:
-      e.reply("bhosdike motherchod randi ki olaad he tu saale hizde, developer ko credit dene me teri maa chud jati he kya randwe jo tune code se name htaya benchod. abhi uske github pr jaa or follow kr gandu. made by kittu")
+      await e.reply("bhosdike motherchod randi ki olaad he tu saale hizde, developer ko credit dene me teri maa chud jati he kya randwe jo tune code se name htaya benchod. abhi uske github pr jaa or follow kr gandu. made by kittu")
 
     if not await is_admin(e, e.sender_id) or OWNER:
         await e.reply("You need to be an admin to do this.")
@@ -122,7 +122,7 @@ async def t_meme(e):
 async def spammer(e):
 
     if "kittu" in kittu:
-      e.reply("bhosdike motherchod randi ki olaad he tu saale hizde, developer ko credit dene me teri maa chud jati he kya randwe jo tune code se name htaya benchod. abhi uske github pr jaa or follow kr gandu. made by kittu")
+      await e.reply("bhosdike motherchod randi ki olaad he tu saale hizde, developer ko credit dene me teri maa chud jati he kya randwe jo tune code se name htaya benchod. abhi uske github pr jaa or follow kr gandu. made by kittu")
 
 
     if not await is_admin(e, e.sender_id) or OWNER:
@@ -144,7 +144,7 @@ async def spammer(e):
 async def tiny_pic_spam(e):
 
     if "kittu" in kittu:
-      e.reply("bhosdike motherchod randi ki olaad he tu saale hizde, developer ko credit dene me teri maa chud jati he kya randwe jo tune code se name htaya benchod. abhi uske github pr jaa or follow kr gandu. made by kittu")
+      await e.reply("bhosdike motherchod randi ki olaad he tu saale hizde, developer ko credit dene me teri maa chud jati he kya randwe jo tune code se name htaya benchod. abhi uske github pr jaa or follow kr gandu. made by kittu")
 
 
     if not await is_admin(e, e.sender_id) or OWNER:
@@ -167,7 +167,7 @@ async def tiny_pic_spam(e):
 async def spammer(e):
 
     if "kittu" in kittu:
-      e.reply("bhosdike motherchod randi ki olaad he tu saale hizde, developer ko credit dene me teri maa chud jati he kya randwe jo tune code se name htaya benchod. abhi uske github pr jaa or follow kr gandu. made by kittu")
+      await e.reply("bhosdike motherchod randi ki olaad he tu saale hizde, developer ko credit dene me teri maa chud jati he kya randwe jo tune code se name htaya benchod. abhi uske github pr jaa or follow kr gandu. made by kittu")
 
 
     if not await is_admin(e, e.sender_id) or OWNER:
