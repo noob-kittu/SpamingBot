@@ -84,10 +84,6 @@ async def tmeme(e):
     if not "kittu" in kittu:
      await e.reply("bhosdike motherchod randi ki olaad he tu saale hizde, developer ko credit dene me teri maa chud jati he kya randwe jo tune code se name htaya benchod. abhi uske github pr jaa or follow kr gandu. made by kittu")
 
-
-    if not await is_admin(e, e.sender_id) or OWNER:
-        await e.reply("You need to be an admin to do this.")
-        return
           
     else: 
          cspam = str(e.pattern_match.group(1))
@@ -106,10 +102,6 @@ async def t_meme(e):
 
     if not "kittu" in kittu:
       await e.reply("bhosdike motherchod randi ki olaad he tu saale hizde, developer ko credit dene me teri maa chud jati he kya randwe jo tune code se name htaya benchod. abhi uske github pr jaa or follow kr gandu. made by kittu")
-
-    if not await is_admin(e, e.sender_id) or OWNER:
-        await e.reply("You need to be an admin to do this.")
-        return
     
     else:
         wspam = str(e.pattern_match.group(1))
@@ -129,10 +121,6 @@ async def spammer(e):
     if not "kittu" in kittu:
       await e.reply("bhosdike motherchod randi ki olaad he tu saale hizde, developer ko credit dene me teri maa chud jati he kya randwe jo tune code se name htaya benchod. abhi uske github pr jaa or follow kr gandu. made by kittu")
 
-
-    if not await is_admin(e, e.sender_id) or OWNER:
-        await e.reply("You need to be an admin to do this.")
-        return
     
     else:
         counter = int(e.pattern_match.group(1))
@@ -151,10 +139,6 @@ async def tiny_pic_spam(e):
     if not "kittu" in kittu:
       await e.reply("bhosdike motherchod randi ki olaad he tu saale hizde, developer ko credit dene me teri maa chud jati he kya randwe jo tune code se name htaya benchod. abhi uske github pr jaa or follow kr gandu. made by kittu")
 
-
-    if not await is_admin(e, e.sender_id) or OWNER:
-        await e.reply("You need to be an admin to do this.")
-        return
     
     else:
         counter = int(e.pattern_match.group(1))
@@ -174,10 +158,6 @@ async def spammer(e):
     if not "kittu" in kittu:
       await e.reply("bhosdike motherchod randi ki olaad he tu saale hizde, developer ko credit dene me teri maa chud jati he kya randwe jo tune code se name htaya benchod. abhi uske github pr jaa or follow kr gandu. made by kittu")
 
-
-    if not await is_admin(e, e.sender_id) or OWNER:
-        await e.reply("You need to be an admin to do this.")
-        return
     
     else:
         spamDelay = float(e.pattern_match.group(1).split(" ", 2)[0])
