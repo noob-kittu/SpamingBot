@@ -61,7 +61,7 @@ def is_admin(func):
             except:
                 is_admin = False
         if is_admin:
-            await func(_s)
+            await func(e, _s)
         else:
             await e.reply("Only Admins can execute this command!")
     return a_c
