@@ -7,7 +7,7 @@ Join [@KoraSupport](https://t.me/KoraSupport)!
 Fork and Follow my github [Kittu](https://github.com/noob-kittu)
 
 # Deploying
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/noob-kittu/NewsBot)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/noob-kittu/SpamingBot)
 
 # Credits
 - [Telethon.](https://github.com/LonamiWebs/Telethon)
