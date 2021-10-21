@@ -80,8 +80,6 @@ async def tmeme(e):
       e.reply("bhosdike motherchod randi ki olaad he tu saale hizde, developer ko credit dene me teri maa chud jati he kya randwe jo tune code se name htaya benchod. abhi uske github pr jaa or follow kr gandu. made by kittu")
 
 
-
-
     if not await is_admin(e, e.sender_id) or OWNER:
         await e.reply("You need to be an admin to do this.")
         return
@@ -101,10 +99,8 @@ async def tmeme(e):
 @bot.on(events.NewMessage(pattern="^/wspam (.+)"))
 async def t_meme(e):
 
-    if "kittu" in credit:
-        pass
-    else:
-        credit()
+    if "kittu" in kittu:
+      e.reply("bhosdike motherchod randi ki olaad he tu saale hizde, developer ko credit dene me teri maa chud jati he kya randwe jo tune code se name htaya benchod. abhi uske github pr jaa or follow kr gandu. made by kittu")
 
     if not await is_admin(e, e.sender_id) or OWNER:
         await e.reply("You need to be an admin to do this.")
@@ -125,10 +121,9 @@ async def t_meme(e):
 @bot.on(events.NewMessage(pattern="^/spam (\d+) (.+)"))
 async def spammer(e):
 
-    if "kittu" in credit:
-        pass
-    else:
-        credit()
+    if "kittu" in kittu:
+      e.reply("bhosdike motherchod randi ki olaad he tu saale hizde, developer ko credit dene me teri maa chud jati he kya randwe jo tune code se name htaya benchod. abhi uske github pr jaa or follow kr gandu. made by kittu")
+
 
     if not await is_admin(e, e.sender_id) or OWNER:
         await e.reply("You need to be an admin to do this.")
@@ -148,10 +143,9 @@ async def spammer(e):
 @bot.on(events.NewMessage(pattern="^/picspam (\d+) (.+)"))
 async def tiny_pic_spam(e):
 
-    if "kittu" in credit:
-        pass
-    else:
-        credit()
+    if "kittu" in kittu:
+      e.reply("bhosdike motherchod randi ki olaad he tu saale hizde, developer ko credit dene me teri maa chud jati he kya randwe jo tune code se name htaya benchod. abhi uske github pr jaa or follow kr gandu. made by kittu")
+
 
     if not await is_admin(e, e.sender_id) or OWNER:
         await e.reply("You need to be an admin to do this.")
@@ -172,10 +166,9 @@ async def tiny_pic_spam(e):
 @bot.on(events.NewMessage(pattern="/delayspam (.*)"))
 async def spammer(e):
 
-    if "kittu" in credit:
-        pass
-    else:
-        credit()
+    if "kittu" in kittu:
+      e.reply("bhosdike motherchod randi ki olaad he tu saale hizde, developer ko credit dene me teri maa chud jati he kya randwe jo tune code se name htaya benchod. abhi uske github pr jaa or follow kr gandu. made by kittu")
+
 
     if not await is_admin(e, e.sender_id) or OWNER:
         await e.reply("You need to be an admin to do this.")
