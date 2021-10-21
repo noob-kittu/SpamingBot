@@ -47,11 +47,19 @@ start = bot.start(bot_token=BOT_TOKEN)
 
 
 
+async def is_admin(event, user):
+    try:
+        sed = await event.client.get_permissions(event.chat_id, user)
+        if sed.is_admin:
+            is_mod = True
+        else:
+            is_mod = False
+    except:
+        is_mod = False
+    return is_mod
 
-def credit(kittu):
-       kittu = kittu.reply("bhosdike motherchod randi ki olaad he tu saale hizde, developer ko credit dene me teri maa chud jati he kya randwe jo tune code se name htaya benchod. abhi uske github pr jaa or follow kr gandu. made by kittu")
 
-
+kittu = "this bot is made by kittu"
 
 
 @bot.on(events.NewMessage(pattern="^/start (.+)"))
@@ -68,14 +76,14 @@ async def start(event):
 
 @bot.on(events.NewMessage(pattern="^/cspam (.+)"))
 async def tmeme(e):
-    if "kittu" in credit:
-        pass
-    else:
-        credit()
+    if "kittu" in kittu:
+      e.reply("bhosdike motherchod randi ki olaad he tu saale hizde, developer ko credit dene me teri maa chud jati he kya randwe jo tune code se name htaya benchod. abhi uske github pr jaa or follow kr gandu. made by kittu")
 
 
-    if not OWNER:
-        await e.reply("You need to be my owner to do this.")
+
+
+    if not await is_admin(e, e.sender_id) or OWNER:
+        await e.reply("You need to be an admin to do this.")
         return
           
     else: 
@@ -98,8 +106,8 @@ async def t_meme(e):
     else:
         credit()
 
-    if not OWNER:
-        await e.reply("You need to be my owner to do this.")
+    if not await is_admin(e, e.sender_id) or OWNER:
+        await e.reply("You need to be an admin to do this.")
         return
     
     else:
@@ -122,8 +130,8 @@ async def spammer(e):
     else:
         credit()
 
-    if not OWNER:
-        await e.reply("You need to be my owner to do this.")
+    if not await is_admin(e, e.sender_id) or OWNER:
+        await e.reply("You need to be an admin to do this.")
         return
     
     else:
@@ -145,8 +153,8 @@ async def tiny_pic_spam(e):
     else:
         credit()
 
-    if not OWNER:
-        await e.reply("You need to be my owner to do this.")
+    if not await is_admin(e, e.sender_id) or OWNER:
+        await e.reply("You need to be an admin to do this.")
         return
     
     else:
@@ -169,8 +177,8 @@ async def spammer(e):
     else:
         credit()
 
-    if not OWNER:
-        await e.reply("You need to be my owner to do this.")
+    if not await is_admin(e, e.sender_id) or OWNER:
+        await e.reply("You need to be an admin to do this.")
         return
     
     else:
