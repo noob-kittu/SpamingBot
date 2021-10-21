@@ -43,8 +43,7 @@ OWNER = os.environ.get("OWNER", default="Autichrist")
 
 bot = TelegramClient("SpamingBot", APP_ID, API_HASH)
 start = bot.start(bot_token=BOT_TOKEN) 
-print ("Successfully Started")
-start.run_until_disconnected()
+
 
 
 
@@ -76,7 +75,8 @@ async def start(event):
 async def start(event):
     event.reply(f'''Available Commands of bot: \n\n /spam \n /cspam \n /wspam \n /picspam \n /depayspam \n\n\n if you like this bot then please follow this github account -  [FOLLOW ME](https://github.com/noob-kittu)''')
 
-
+print ("Successfully Started")
+start.run_until_disconnected()
 
 
 @bot.on(events.NewMessage(pattern="^/cspam (.+)"))
