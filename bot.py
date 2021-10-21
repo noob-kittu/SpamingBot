@@ -63,13 +63,6 @@ kittu = "this bot is made by kittu"
 
 
 
-@bot.on(events.NewMessage(pattern="^/start"))
-async def start(e):
-    e.reply('''This is A spam Bot. created by @Autichrist \n\nGive Command \n/help to know All commands of this bot''')
-
-
-
-
 
 @bot.on(events.NewMessage(pattern="^/cspam (.+)"))
 async def tmeme(e):
