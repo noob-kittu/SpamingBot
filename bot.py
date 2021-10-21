@@ -65,7 +65,7 @@ kittu = "this bot is made by kittu"
 
 @bot.on(events.NewMessage(pattern="^/start (.+)"))
 async def start(event):
-    event.reply(f'''This is A spam Bot, Owned by @{OWNER_USERNAME} and created by @Autichrist \n\nGive Command \n/help to know All commands of this bot''')
+    event.reply(f"This is A spam Bot, Owned by @{OWNER_USERNAME} and created by @Autichrist \n\nGive Command \n/help to know All commands of this bot")
 
 
 @bot.on(events.NewMessage(pattern="^/help (.+)"))
