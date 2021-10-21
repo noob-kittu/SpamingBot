@@ -68,9 +68,6 @@ async def start(e):
     e.reply('''This is A spam Bot. created by @Autichrist \n\nGive Command \n/help to know All commands of this bot''')
 
 
-@bot.on(events.NewMessage(pattern="^/help"))
-async def help(e):
-    e.reply(f'''Available Commands of bot: \n\n /spam \n /cspam \n /wspam \n /picspam \n /depayspam \n\n\n if you like this bot then please follow this github account -  [FOLLOW ME](https://github.com/noob-kittu)''')
 
 
 
