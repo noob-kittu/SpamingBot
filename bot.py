@@ -138,7 +138,7 @@ async def spammer(e):
         counter = int(e.pattern_match.group(1))
         spam_message = str(e.pattern_match.group(2))
         await e.delete()
-        # await asyncio.wait([e.respond(spam_message) for i in range(counter)])
+        await asyncio.wait([e.respond(spam_message) for i in range(counter)])
         if EVENT_LOGS:
             await e.reply(
                  "#SPAM\n" "Spam was executed successfully"
