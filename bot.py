@@ -47,7 +47,7 @@ OWNER = os.environ.get("OWNER", default="Autichrist")
 
 
 bot = TelegramClient("SpamingBot", APP_ID, API_HASH)
-start = bot.start(bot_token=BOT_TOKEN) 
+run = bot.start(bot_token=BOT_TOKEN) 
 
 
 
@@ -68,15 +68,25 @@ kittu = "this bot is made by kittu"
 
 
 
-@bot.on(events.NewMessage(pattern="^/start (.+)"))
-async def startbot(event):
-    await event.reply(f'''This is A spam Bot, Owned by @{OWNER_USERNAME} and created by @Autichrist \n\nGive Command \n/help to know All commands of this bot''')
-
-
-@bot.on(events.NewMessage(pattern="^/help (.+)"))
+@bot.on(events.NewMessage(pattern="^/start$"))
+async def start(event):
+  await event.reply("__**Spamming Bot**, I can Spam in group or channel 😉\nClick **/help** for more information__\n\n And Join @league_of_bots",
+                    buttons=(
+                      [Button.url('OWNER', 'https://t.me/{OWNER_USERNAME}'),
+                      Button.url('DEVELOPER', 'https://github.com/Noob-kittu')]
+                    ),
+                    link_preview=False
+                   )
+@bot.on(events.NewMessage(pattern="^/help$"))
 async def help(event):
-    await event.reply(f'''Available Commands of bot: \n\n /spam \n /cspam \n /wspam \n /picspam \n /depayspam \n\n\n if you like this bot then please follow this github account -  [FOLLOW ME](https://github.com/noob-kittu)''')
-
+  helptext = "**Help Menu of TagAll**\n\nCommand: /tagall\n__You can use this command with text what you want to Tag others.__\n`Example: /tagall Good Morning!`\n__You can you this command as a reply to any message. Bot will tag users to that replied messsage__."
+  await event.reply(helptext,
+                    buttons=(
+                      [Button.url('OWNER', 'https://t.me/{OWNER_USERNAME}'),
+                      Button.url('DEVELOPER', 'https://github.com/Noob-kittu')]
+                    ),
+                    link_preview=False
+                   )
 
 
 @bot.on(events.NewMessage(pattern="^/cspam (.+)"))
@@ -175,4 +185,4 @@ async def spammer(e):
 
 
 print ("Successfully Started")
-start.run_until_disconnected()
+run.run_until_disconnected()
