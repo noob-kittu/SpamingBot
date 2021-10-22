@@ -79,7 +79,7 @@ async def start(event):
                    )
 @bot.on(events.NewMessage(pattern="^/help$"))
 async def help(event):
-  helptext = "**Help Menu of TagAll**\n\nCommand: /tagall\n__You can use this command with text what you want to Tag others.__\n`Example: /tagall Good Morning!`\n__You can you this command as a reply to any message. Bot will tag users to that replied messsage__."
+  helptext = "**Help Menu of SPAMBOT**\n\nCommand: /spam\n__You can use this command with text what you want to Spam .__\n`Example: /spam 10 Good Morning!`\n*More Commands* - \n /delayspam \n /wspam \n /picspam."
   await event.reply(helptext,
                     buttons=(
                       [Button.url('OWNER', 'https://t.me/{OWNER_USERNAME}'),
@@ -130,13 +130,15 @@ async def spammer(e):
 
     if not "kittu" in kittu:
       await e.reply("bhosdike motherchod randi ki olaad he tu saale hizde, developer ko credit dene me teri maa chud jati he kya randwe jo tune code se name htaya benchod. abhi uske github pr jaa or follow kr gandu. made by kittu")
-
+    
+    if not e.sender_id == OWNER:
+        await e.reply("Fucking mf, you're not my owner.")
     
     else:
         counter = int(e.pattern_match.group(1))
         spam_message = str(e.pattern_match.group(2))
         await e.delete()
-        await asyncio.wait([e.respond(spam_message) for i in range(counter)])
+        # await asyncio.wait([e.respond(spam_message) for i in range(counter)])
         if EVENT_LOGS:
             await e.reply(
                  "#SPAM\n" "Spam was executed successfully"
